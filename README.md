@@ -3,11 +3,6 @@
 A modern Instagram-style social media application built with **React.js**, **Tailwind CSS**, and **React Router**.  
 This project includes authentication, posting images/videos, likes, comments, and a responsive UI inspired by Instagram.
 
----
-
-
----
-
 # 📌 Features
 
 ## 🔐 Authentication
@@ -35,8 +30,6 @@ This project includes authentication, posting images/videos, likes, comments, an
 - Controlled Inputs  
 - Local Storage API  
 
----
-
 # 🛠️ Tech Stack
 
 | Technology | Usage |
@@ -51,5 +44,32 @@ This project includes authentication, posting images/videos, likes, comments, an
 ---
 
 # 📂 Project Structure
+src/
+│
+├── components/
+│ ├── Navbar.jsx
+│ ├── PostCard.jsx
+│
+├── pages/
+│ ├── Login.jsx
+│ ├── Signup.jsx
+│ ├── Dashboard.jsx
+│
+├── App.jsx
+├── main.jsx
+└── index.css
+
+
+# ⚙️ Installation & Setup
+
+## 1️⃣ Clone Repository
+```bash
+git clone https://github.com/Mehwish-riaz/mini-social-feed-react.git
+
+2️⃣ Install Dependencies
+npm install
+
+3️⃣ Run Project
+npm run dev
 
 
