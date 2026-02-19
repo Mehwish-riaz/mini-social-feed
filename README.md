@@ -11,7 +11,7 @@ This project includes authentication, posting images/videos, likes, comments, an
 ---
 
 #  Live Demo
-> (Add your deployed link here later)
+> ( Deployed link will be added here later)
 
 ---
 
