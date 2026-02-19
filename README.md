@@ -3,17 +3,76 @@
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 ![Coverage Status](https://img.shields.io/badge/coverage-100%25-brightgreen)
 
-## Overview
-Mini Social Feed is a simple application that allows users to share and view posts in a social media-style feed.
+# Overview
 
-## Features
-- User authentication
-- Post creation and management
-- Real-time updates
-- User interaction (likes, comments)
+A modern Instagram-style social media application built with **React.js**, **Tailwind CSS**, and **React Router**.  
+This project includes authentication, posting images/videos, likes, comments, and a responsive UI inspired by Instagram.
 
-## Documentation
-Comprehensive documentation is provided to facilitate ease of use and implementation. Detailed guidelines to follow and understand the code structure are available.
+---
+
+#  Live Demo
+> (Add your deployed link here later)
+
+---
+
+#  Features
+
+##  Authentication
+- Signup with name, email, username, and password  
+- Login with validation  
+- Data stored in localStorage (for learning purpose)
+
+##  Posts System
+- Upload image or video in a single media picker  
+- Preview selected media before posting  
+- Seeded demo posts included  
+- Like, comment, and repost UI buttons  
+
+##  UI / UX
+- Instagram-inspired UI design  
+- Tailwind CSS styling  
+- Centered feed layout  
+- Responsive design  
+
+##  React Concepts Used
+- useState  
+- useEffect (lifecycle concept)  
+- React Router  
+- Conditional Rendering  
+- Controlled Inputs  
+- Local Storage API  
+
+---
+
+#  Tech Stack
+
+| Technology | Usage |
+|------------|--------|
+| React.js | Frontend framework |
+| Tailwind CSS | Styling |
+| React Router DOM | Page navigation |
+| Lucide React | Icons |
+| LocalStorage | Authentication & Data |
+| Vite | Development server |
+
+---
+
+#  Project Structure
+
+src/
+│
+├── components/
+│ ├── Navbar.jsx
+│ ├── PostCard.jsx
+│
+├── pages/
+│ ├── Login.jsx
+│ ├── Signup.jsx
+│ ├── Dashboard.jsx
+│
+├── App.jsx
+├── main.jsx
+└── index.css
 
 ## Setup Instructions
 To set up the project locally:
