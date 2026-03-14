@@ -11,7 +11,7 @@ This project includes authentication, posting images/videos, likes, comments, an
 ---
 
 #  Live Demo
-> ( Deployed link will be added here later)
+> https://mini-social-feed-psi.vercel.app/
 
 ---
 
