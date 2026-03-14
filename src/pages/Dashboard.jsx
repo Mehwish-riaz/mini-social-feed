@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import PostCard from "../components/PostCard";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+  const navigate = useNavigate(); // Correct place to initialize
+  
   const [posts, setPosts] = useState([]);
   const [newText, setNewText] = useState("");
   const [newMedia, setNewMedia] = useState(null);
@@ -68,74 +71,73 @@ const Dashboard = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("user");
-    window.location.href = "/login"; // redirect to login
+    navigate("/login"); // Now this will work perfectly!
   };
 
   return (
-    <>
-    
-  <div className="bg-gray-100 min-h-screen p-4 flex justify-center">
-    <div className="w-full max-w-xl">
+    <div className="bg-gray-100 min-h-screen p-4 flex justify-center">
+      <div className="w-full max-w-xl">
 
-      {/* Logout */}
-      <div className="flex justify-end mb-4">
-        <button 
-          onClick={handleLogout} 
-          className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
-        >
-          Logout
-        </button>
-      </div>
+        {/* Logout */}
+        <div className="flex justify-end mb-4">
+          <button 
+            onClick={handleLogout} 
+            className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+          >
+            Logout
+          </button>
+        </div>
 
-      {/* Create Post */}
-      <div className="bg-white p-4 rounded shadow mb-6">
-        <h3 className="font-bold mb-2">Create Post</h3>
+        {/* Create Post */}
+        <div className="bg-white p-4 rounded shadow mb-6">
+          <h3 className="font-bold mb-2">Create Post</h3>
 
-        <input
-          type="text"
-          placeholder="What's on your mind?"
-          className="border w-full p-2 rounded mb-2"
-          value={newText}
-          onChange={(e) => setNewText(e.target.value)}
-        />
-
-        <label className="w-full mb-2 cursor-pointer">
-          <div className="bg-gray-200 py-2 text-center rounded">Choose Media</div>
           <input
-            type="file"
-            accept="image/*,video/*"
-            onChange={handleMediaUpload}
-            className="hidden"
+            type="text"
+            placeholder="What's on your mind?"
+            className="border w-full p-2 rounded mb-2"
+            value={newText}
+            onChange={(e) => setNewText(e.target.value)}
           />
-        </label>
 
-        <button
-          onClick={handleCreatePost}
-          className="bg-pink-500 w-full py-2 text-white rounded hover:bg-pink-600"
-        >
-          Post
-        </button>
+          <label className="w-full mb-2 cursor-pointer">
+            <div className="bg-gray-200 py-2 text-center rounded">Choose Media</div>
+            <input
+              type="file"
+              accept="image/*,video/*"
+              onChange={handleMediaUpload}
+              className="hidden"
+            />
+          </label>
 
-        {/* Preview */}
-        {newMedia && mediaType === "image" && (
-          <img src={newMedia} className="mt-2 max-h-60 w-full object-cover rounded" />
-        )}
-        {newMedia && mediaType === "video" && (
-          <video controls className="mt-2 max-h-60 w-full rounded">
-            <source src={newMedia} />
-          </video>
-        )}
+          <button
+            onClick={handleCreatePost}
+            className="bg-pink-500 w-full py-2 text-white rounded hover:bg-pink-600"
+          >
+            Post
+          </button>
+
+          {/* Preview */}
+          {newMedia && mediaType === "image" && (
+            <img src={newMedia} className="mt-2 max-h-60 w-full object-cover rounded" alt="preview" />
+          )}
+          {newMedia && mediaType === "video" && (
+            <video controls className="mt-2 max-h-60 w-full rounded">
+              <source src={newMedia} />
+            </video>
+          )}
+        </div>
+
+        {/* Posts Feed */}
+        <div className="space-y-4">
+          {posts.map((p) => (
+            <PostCard key={p.id} {...p} />
+          ))}
+        </div>
+
       </div>
-
-      {/* Posts Feed */}
-      <div className="space-y-4">
-        {posts.map((p) => (
-          <PostCard key={p.id} {...p} />
-        ))}
-      </div>
-
     </div>
-  </div></>
-);
-}
+  );
+};
+
 export default Dashboard;
